@@ -15,7 +15,7 @@ sys.path.append(os.path.abspath("./model"))
 from load import * 
 
 app = Flask(__name__)
-
+port = int(os.getenv("PORT"))
 global model, graph
 
 model, graph = init()
@@ -58,5 +58,5 @@ if __name__ == "__main__":
 	#port = int(os.environ.get('PORT', 5000))
 
 	#run the app locally on the givn port
-	app.run(host='127.0.0.1', port=1245)
+	app.run(host='0.0.0.0', port=port)
 
